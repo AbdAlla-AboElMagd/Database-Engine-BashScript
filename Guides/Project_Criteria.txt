@@ -1,0 +1,61 @@
+Project Title:
+
+Bash Script-Based Database Management System
+
+Objective:
+
+To develop a functional database management system (DBMS) in Bash that supports basic database operations like creating, listing, connecting to, and deleting databases, as well as managing tables within those databases.
+
+Instructions:
+
+1. General Requirements:
+
+    Write all scripts using Bash scripting.
+    Use clear and user-friendly prompts for interaction.
+    Follow modular programming principles:
+        A main script (db.sh) to handle database-level operations.
+        A separate script (table.sh) to handle table-level operations.
+
+2. Functional Requirements:
+Database Management (db.sh):
+
+    Create Database:
+        Prompt the user to enter a name for the database.
+        Validate the name to avoid special characters or numbers at the start.
+        Create a folder for the database and ensure appropriate permissions.
+    List Databases:
+        Display all available databases in the system.
+    Connect to Database:
+        Allow the user to connect to an existing database.
+        Once connected, transfer control to the table.sh script for table operations.
+    Delete Database:
+        Prompt the user for confirmation before deletion.
+        Ensure the database exists before attempting deletion.
+    Exit:
+        Provide an option to exit the program gracefully.
+
+Table Management (table.sh):
+
+    Create Table:
+        Allow users to define a table name and the number of columns.
+        Prompt users to specify column names and their data types (e.g., Integer, String).
+        Create a metadata file to store table structure.
+    List Tables:
+        Display all available tables in the connected database.
+    Drop Table:
+        Allow users to delete a table after confirmation.
+    Insert Row:
+        Validate and insert data into the table. Ensure primary keys are unique.
+    Show Data:
+        Display table data with an option to select all or specific columns.
+    Delete Row:
+        Allow users to delete specific rows based on a unique identifier.
+    Update Cell:
+        Enable users to update specific cells in the table by row and column numbers.
+    Exit:
+        Return control to the main menu (db.sh).
+
+Bonus:
+Offer extra credit for additional features like:
+    Searching for data within a table.
+    Exporting table data to a CSV file.
