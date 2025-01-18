@@ -3,6 +3,7 @@
 # This File Control Tables in Database Engines
 
 echo "Entered Tables Controller"
+echo "database name -> $dbname , database path -> $dbpath"
 echo "Please Choose What you want to do"
 
 PS3="$dbname Controller -> Your Choice -> "

@@ -29,7 +29,12 @@ while true; do
 				fi	
 				break;;
 			"List Databases") echo 'List Databases!'
+				if [ -d ".db/$dbname" ]; then
 				ls .db/
+				else
+				echo "There's no Database!"
+				fi
+				echo "-----------------------------------------"
 				break;;
 			"Connect to Database") echo 'Connect to Database!'
 				while true; do
@@ -42,7 +47,9 @@ while true; do
 				done
 				if [ -d ".db/$dbname" ]; then
 					echo "Connected to $dbname database"
+					dbpath=".db/$dbname"
 					export dbname
+					export dbpath
 					./table.sh
 				else
 					echo "There's no Database with that name!"
