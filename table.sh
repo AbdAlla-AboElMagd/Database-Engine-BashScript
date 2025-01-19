@@ -2,6 +2,8 @@
 
 # This File Control Tables in Database Engines
 
+echo "---------------- Table Controler ----------------------"
+
 echo "Entered Tables Controller"
 echo "database name -> $dbname , database path -> $dbpath"
 echo "Please Choose What you want to do"
@@ -44,27 +46,7 @@ while true; do
 				# To Do Show Data
 				break;;
 			"Delete Row") echo 'Delete Row !'
-				counter=3;
-				while [ $counter -gt 0 ]; do
-					read -p "Enter The Row Number: " rnum
-					counter=$((counter-1))
-					if [[ "$rnum" =~ ^[0-9]+$ ]]; then
-						totalrnum=$(wc -l < "$dname")
-						totalrnum=$((totalrnum+1))
-						echo "Row number entered: $rnum" 
-						echo "Total rows: $totalrnum"
-						if (( rnum <= totalrnum )); then
-							sed -i "${rnum}d" "$dname"
-							echo "deleted row number $rnum"
-							break
-						else
-							echo "The Number you entered Exceeded the total number of row"
-						fi
-					else
-						echo "Enter a Valid Row Number"
-					fi
-					echo "You have $counter tries left"
-				done
+				./delete.sh
 				break;;
 			"Update Cell") echo 'Updated Row !'
 				# To Do Update Cell

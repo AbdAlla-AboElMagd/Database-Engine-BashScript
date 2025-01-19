@@ -1,9 +1,42 @@
 #! /bin/bash
 
-#rnum=2
-dbname="test"
-# sed -i "${rnum}d" test
-tablename="tableTest"
+
+if [ -z "$dbname" ]; then
+    # dbname="test"
+    while true; do
+    read -p "Enter the name of the Database: " dbname
+        if [[ "$dbname" =~ ^[a-zA-Z0-9]+$ ]]; then
+		    if  [[ -d ".db/$dbname" ]]; then
+		        break
+            else
+                echo "Database does not exist"
+            fi
+	    else
+		    echo "Enter a Valid Table Name"
+	    fi
+    done
+fi
+
+if [ -z "$tablename" ]; then
+    # tablename="tableTest"
+    while true; do
+    read -p "Enter the name of the table: " tablename
+        if [[ "$tablename" =~ ^[a-zA-Z0-9]+$ ]]; then
+            if  [[ -f ".db/$dbname/$tablename" ]]; then
+		        break
+            else
+                echo "Table does not exist"
+            fi
+	    else
+		    echo "Enter a Valid Table Name"
+	    fi
+    done
+fi
+
+if [ -z "$PS3" ]; then
+    PS3="Delete Control db $dbname table $tablename -> "
+fi
+
 
 select deleteChoice in "Delete By Row Number" "Delete by PK"
 do
