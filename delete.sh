@@ -49,7 +49,7 @@ do
                 read -p "Enter The Row Number: " rnum
                 counter=$((counter-1))
                 if [[ "$rnum" =~ ^[0-9]+$ ]]; then
-                    totalrnum=$(wc -l < "$dname")
+                    totalrnum=$(wc -l < ".db/$dbname/$tablename")
                     totalrnum=$((totalrnum+1))
                     # echo "Row number entered: $rnum" 
                     # echo "Total rows: $totalrnum"

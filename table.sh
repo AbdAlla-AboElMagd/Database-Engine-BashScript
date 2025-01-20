@@ -49,7 +49,7 @@ while true; do
 				./delete.sh
 				break;;
 			"Update Cell") echo 'Updated Row !'
-				# To Do Update Cell
+				./update.sh
 				break;;
 			Exit) echo "Exiting $dbname Controller! , Goodbye"
 				exit 0;;
